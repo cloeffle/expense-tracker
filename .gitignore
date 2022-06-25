@@ -1,5 +1,6 @@
 ### react ###
 .DS_*
+.eslintcache
 *.log
 logs
 **/*.backup.*
