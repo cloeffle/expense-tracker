@@ -6,14 +6,55 @@ const ExpenseForm = () => {
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
 
+  //! use this if you want to work only with one state with object, than use the form below with previous state
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: '',
+  //   enteredAmount: '',
+  //   enteredDate: '',
+  // });
+
   const titleChangeHandler = (event) => {
+    //* simple way with 3 states (often used)
     setEnteredTitle(event.target.value);
+    //* way with 1 State as object
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // });
+    //! better practise "if you work with previous states (use this form!)", good way cause you wont have a problem with outdated snapshots.
+    // setUserInput((prevState) => {
+    //   return {
+    //     ...prevState,
+    //     enteredTitle: event.target.value,
+    //   };
+    // });
   };
+
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // });
+
+    // setUserInput((prevState) => {
+    //   return {
+    //     ...prevState,
+    //     enteredAmount: event.target.value,
+    //   };
   };
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredDate: event.target.value,
+    // });
+
+    // setUserInput((prevState) => {
+    //   return {
+    //     ...prevState,
+    //     enteredDate: event.target.value,
+    //   };
   };
 
   console.log(enteredTitle);
